@@ -4,22 +4,120 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HS Ebook</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="main.js"></script>
+  <script src="https://kit.fontawesome.com/da482cdeb9.js" crossorigin="anonymous"></script>
+  <title>Soon's Library</title>
 </head>
 <body>
-  <header>
-    ebook 사이트 이름
-  </header>
-  <nav>
-    <ul>
-      <li>웹툰</li>
-      <li>만화</li>
-      <li>웹소설</li>
-      <li>커뮤니티</li>
-      <li>이벤트</li>
-    </ul>
-  </nav>
-  <main>
-  </main>
+  <div id="home">
+    <header>
+      <div class="title">
+        <h1><span>SOON'S</span> LIBRARY</h1>
+      </div>
+      <nav class="nav-bar">
+        <ul class="catagory">
+          <li class="sub-category"><a href="src/novel.html">웹소설</a></li>
+          <li class="sub-category"><a href="">웹툰</a></li>
+          <li class="sub-category"><a href="">이북</a></li>
+          <li class="sub-category"><a href="">커뮤니티</a></li>
+          <li class="sub-category"><a href="">이벤트</a></li>
+        </ul>
+        <div class="search-bar">
+          <input type="search" placeholder="키워드를 검색하세요.">
+          <input type="submit" value="검색">
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <div>
+        <h2 class="sec-title hide-text">이벤트</h2>
+        <div class="carousel">
+          <button class="prev"><i class="fa-solid fa-caret-left"></i></button>
+          <button class="next"><i class="fa-solid fa-caret-right"></i></button>
+          <div>
+            <a href="">
+              <div class="caro-backgorund">
+                <img src="" alt="">
+                <div class="">
+                  <span>&lt;제목&gt;</span>
+                  <p>어쩌구 이벤트를 합니다!</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 class="sec-title">신규or실시간 인기작</h2>
+        <div class="book-component">
+          <ul>
+            <li class="">
+              <div class="book-poster">
+                <img src="/img/myfirstmemory.jpg" alt="myfirstmemory">
+              </div>
+              <div class="book-info">
+                <h3 class="book-name">My first memory</h3>
+                <span>작가명</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h2 class="sec-title">이달의 베스트</h2>
+        <div></div>
+      </div>
+      <div>
+        <h2 class="sec-title">무료 웹소설</h2>
+        <div></div>
+      </div>
+      <div>
+        <h2 class="sec-title">작가 지망생</h2>
+        <div></div>
+      </div>
+    </main>
+    <footer>
+      <h2>회사정보</h2>
+      <div class="corp">
+        <div class="corp-service">
+          <h3>서비스</h3>
+          <ul class="corp-list">
+            <li>서비스 가이드</li>
+            <li>제휴카드</li>
+            <li>콘텐츠 제공 문의</li>
+            <li>사업 제휴 문의</li>
+            <li>회사 소개</li>
+            <li>인재채용</li>
+          </ul>
+        </div>
+        <div class="corp-info">
+          <h3>(주)순책방</h3>
+          <div>
+            <ul class="corp-list">
+              <li>이용약관</li>
+              <li>개인정보처리방침</li>
+              <li>청소년보호정책</li>
+              <li>웹툰 고객센터</li>
+              <li>광고/사업문의</li>
+            </ul>
+          </div>
+        </div>
+        <div class="corp-sns">
+          <h3>SNS</h3>
+          <ul class="corp-list">
+            <li><a href=""><i class="fa-brands fa-instagram"></i>인스타</a></li>
+            <li><a href=""><i class="fa-brands fa-twitter"></i>트위터</a></li>
+            <li><a href=""><i class="fa-regular fa-envelope"></i>메일</a></li>
+          </ul>
+          
+          
+          
+        </div>
+      </div>
+      <p class="corp-copyright">본 사이트에 등록된 콘텐츠는 사이트 및 원 저작권자에 권리가 있는 콘텐츠이며, 무단 복제/전송/수정/배포는 법적 처벌을 받을 수 있습니다.</p>
+    </footer>
+  </div>
+  
 </body>
 </html>
