@@ -25,15 +25,27 @@ const bookName = makeDOMwithProperties('h3', {
   className: "book-name",
   innerText: info.name
 })
-const price = makeDOMwithProperties('div', {
-  innerText: `1화 ${info.price}원`
+const author = makeDOMwithProperties('div', {
+  className: 'author',
+  innerText: `${info.author}`
 })
-const author = makeDOMwithProperties('span', {
-  innerText: "작가명"
+const scope = makeDOMwithProperties('span', {
+  className: 'price',
+  innerText: `${info.scope}`
+})
+const scopeImg = makeDOMwithProperties('i',{
+  className: "fa-solid fa-star"
+})
+const review = makeDOMwithProperties('span', {
+  className: "review",
+  innerText: ` (${info.review})`
 })
 
-appendChildrenList(bookInfo,[bookName, price, author]);
+appendChildrenList(bookInfo,[bookName,author,scopeImg, scope, review]);
 
 const prodCard = makeDOMwithProperties('li',{});
 appendChildrenList(prodCard,[bookPoster, bookInfo]);
+
+return prodCard;
 }
+
