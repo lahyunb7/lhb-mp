@@ -4,6 +4,10 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  font-family: 'NanumSquareNeo-Variable','sans-serif';
 }
 
 ul {
@@ -11,16 +15,20 @@ ul {
 }
 
 #home {
-  width: 1100px;
+  width: 1200px;
   margin: 0px auto;
 }
 
 .title {
   display: block;
-  margin-left: 400px;
-  padding: 20px;
+}
+.title > h1 {
+  text-align: center;
+  margin: 3rem;
+  font-size: 2rem;
 }
 .title > h1 > span {
+  font-size : 2em;
   color: var(--main--color);
 }
 
@@ -29,6 +37,7 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 20px;
   border-bottom: 1.5px solid rgba(201, 196, 196, .3);
 }
 .catagory {
@@ -38,7 +47,13 @@ ul {
 .catagory > .sub-category > a {
   padding: 20px;
   margin: 10px 0px;
+  font-size : 1.2rem;
+  color: black;
 }
+.catagory > .sub-category > a:visited {
+  color: black;
+}
+
 .search-bar > input:first-child {
   width: 230px;
   height: 30px;
@@ -48,19 +63,19 @@ ul {
   background-color: var(--main--color);
   border: 1px solid var(--main--border);
   border-radius: 3px;
+  padding: 5px;
+}
+.container {
+  margin: 20px 0px;
 }
 
 .section-title {
-  margin: 80px 0px 20px 0px;
-  padding: 8px;
-  /* background-color: var(--main--color--300);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  font-size: 1.5rem;
+  margin: 80px 0px 50px;
 }
-
-
+.event-title {
+  margin-top: 40px;
+}
 
 .hide-text {
   height: 0px;
@@ -69,46 +84,42 @@ ul {
   margin: 0px;
 }
 
-.container {
-  margin: 20px 0px;
-}
-.carousel {
+.event-slide {
   position: relative;
-  width: 100%;
-  background-color: rgba(252, 151, 243, .5);
+  width: 810px;
   border-radius: 10px;
 }
-.carousel > button {
+.event-banner {
+  overflow: hidden;
+}
+.event-banner > div {
+  display: flex;
+  width: 100%;
+  transition: all 1s;
+}
+.event-banner > div > img{
+  width: 810px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.event-slide > button {
   position: absolute;
-  top: 170px;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
+  top: 45%;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: rgb(243, 237, 237);
   border: none;
-  color: gray;
   
 }
-.carousel > .prev {
-  left: -23px;
-  box-shadow: -3px -3px 15px rgb(201, 198, 198);
+.event-slide > .prev {
+  left: -20px;
 }
-.carousel > .next {
-  right: -23px;
-  box-shadow: 3px 3px 15px rgb(201, 198, 198);
+.event-slide > .next {
+  right: -20px;
 }
 
-.caro-backgorund {
-  width: 800px;
-  height: 400px;
-}
-.caro-backgorund > div {
-  position: absolute;
-  bottom: 45px;
-  left: 40px;
-  font-size: 30px;
-}
 
 .prod-list {
   display: flex;
@@ -118,11 +129,31 @@ ul {
   display: flex;
   flex-direction: column;
 }
-.book-info > span {
-  font-weight: 600;
+.book-poster {
+  text-align: center;
 }
-.book-info > .price {
-  font-size: 15px;
+.book-poster > img {
+  width: 250px;
+  height: 380px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px gray;
+}
+.book-info {
+  margin-top: 30px;
+  margin-left: 10px;
+}
+.book-info > h3 {
+  font-size : 1.2rem;
+}
+.book-info > .author {
+  margin : 8px 0px;
+}
+.book-info > span {
+  font-weight: 500;
+  font-size : 0.8rem;
+}
+.book-info > .scope {
+  font-size: 1rem;
 }
 .book-info > i {
   color: rgba(255, 0, 0, 0.671);
@@ -131,14 +162,10 @@ ul {
   color: grey; 
 }
 
-.book-poster > img {
-  width: 280px;
-  height: 358px;
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px gray;
-}
 
 footer {
+  margin-top: 80px;
+  padding-top: 40px;
   border-top: 1.5px solid rgba(201, 196, 196, .3);
 }
 .corp {
@@ -146,33 +173,33 @@ footer {
   justify-content: space-between;
 }
 .corp > div > h3 {
-  font-size: 16px;
+  font-size: 1rem;
   color: gray;
 }
 .corp-list {
   display: flex;
   flex-direction: column;
-  margin-top: 0px;
+  margin: 10px 0px 10px;
 }
 .corp-service {
   flex-grow: 1.5;
 }
 .corp-info {
-  flex-grow: 2.5;
+  flex-grow: 2.2;
 }
 .corp-sns {
-  flex-grow: 0.5;
+  flex-grow: 0.8;
 }
 
 .corp-list > li,
-.corp-copyright,
-.corp-list > li > a {
-  margin: 5px 0px;
+.corp-copyright {
+  margin: 10px 0px;
   color: rgb(148, 148, 148);
-  font-size: 12px;
+  font-size: 0.8rem;
   font-weight: 400;
 }
 .fa-brands, .fa-envelope {
-  font-size: 23px;
-  margin: 3px;
+  font-size: 2rem;
+  color: rgb(148, 148, 148);
+  margin: 15px 20px 0px 0px;
 }

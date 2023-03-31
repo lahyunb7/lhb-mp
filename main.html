@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css">
-  <script src="main.js"></script>
+  <script type="module" src="main.js"></script>
   <script src="https://kit.fontawesome.com/da482cdeb9.js" crossorigin="anonymous"></script>
   <title>Soon's Library</title>
 </head>
@@ -13,7 +13,7 @@
   <div id="home">
     <header>
       <div class="title">
-        <h1><span>SOON'S</span> LIBRARY</h1>
+        <h1><span>S</span> BOOK'S</h1>
       </div>
       <nav class="nav-bar">
         <ul class="catagory">
@@ -31,28 +31,47 @@
     </header>
     <main class="container">
       <div>
-        <h2 class="sec-title hide-text">이벤트</h2>
-        <div class="carousel">
-          <button class="prev"><i class="fa-solid fa-caret-left"></i></button>
-          <button class="next"><i class="fa-solid fa-caret-right"></i></button>
-          <div>
-            <a href="">
-              <div class="caro-backgorund">
-                <img src="" alt="">
-                <div class="">
-                  <span>&lt;제목&gt;</span>
-                  <p>어쩌구 이벤트를 합니다!</p>
-                </div>
-              </div>
-            </a>
+        <h2 class="section-title event-title">이벤트</h2>
+        <div class="event-slide">
+          <div class="event-banner">
+            <div class="slide-container">
+              <img class="slide-item" src="./img/event/까마귀는 반짝이는 것을 좋아해.jpg" alt="까마귀는 반짝이는 것을 좋아해.">
+              <img class="slide-item" src="./img/event/늑대지만 해치지 않아요.jpg" alt="늑대지만 해치지 않아요.">
+              <img class="slide-item" src="./img/event/우리 같이 살아요.jpg" alt="우리 같이 살아요.">
+              <img class="slide-item" src="./img/event/호랑이님의 딸이 되었습니다.jpg" alt="호랑이님의 딸이 되었습니다.">
+              <img class="slide-item" src="./img/event/로맨스는 없다.jpg" alt="로맨스는 없다.">
+              <img class="slide-item" src="./img/event/괴물 저택의 도련님을 지키는 방법.jpg" alt="괴물 저택의 도련님을 지키는 방법.">
+
+            </div>
           </div>
+          <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
       </div>
-      <div>
-        <h2 class="sec-title">신규or실시간 인기작</h2>
+      <!-- <div class="section-title best-seller">
+        <h2 class="section-title">신규or실시간 인기작</h2>
         <div class="book-component">
-          <ul>
-            <li class="">
+          <ul class="prod-list">
+            <li class="prod-card">
+              <div class="book-poster">
+                <img src="/img/myfirstmemory.jpg" alt="myfirstmemory">
+              </div>
+              <div class="book-info">
+                <h3 class="book-name">My first memory</h3>
+                <span class="author">작가명</span>
+                <div class="scope"></div>
+              </div>
+            </li>
+            <li class="prod-card">
+              <div class="book-poster">
+                <img src="/img/myfirstmemory.jpg" alt="myfirstmemory">
+              </div>
+              <div class="book-info">
+                <h3 class="book-name">My first memory</h3>
+                <span>작가명</span>
+              </div>
+            </li>
+            <li class="prod-card">
               <div class="book-poster">
                 <img src="/img/myfirstmemory.jpg" alt="myfirstmemory">
               </div>
@@ -75,10 +94,10 @@
       <div>
         <h2 class="sec-title">작가 지망생</h2>
         <div></div>
-      </div>
+      </div> -->
     </main>
     <footer>
-      <h2>회사정보</h2>
+      <h2 class="hide-text">회사정보</h2>
       <div class="corp">
         <div class="corp-service">
           <h3>서비스</h3>
@@ -105,17 +124,20 @@
         </div>
         <div class="corp-sns">
           <h3>SNS</h3>
-          <ul class="corp-list">
-            <li><a href=""><i class="fa-brands fa-instagram"></i>인스타</a></li>
-            <li><a href=""><i class="fa-brands fa-twitter"></i>트위터</a></li>
-            <li><a href=""><i class="fa-regular fa-envelope"></i>메일</a></li>
-          </ul>
-          
-          
-          
+          <!-- <ul class="corp-list corp-sns">
+            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-envelope"></i></a></li>
+          </ul> -->
+          <div class="sns">
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-regular fa-envelope"></i></a>
+          </div>
         </div>
       </div>
       <p class="corp-copyright">본 사이트에 등록된 콘텐츠는 사이트 및 원 저작권자에 권리가 있는 콘텐츠이며, 무단 복제/전송/수정/배포는 법적 처벌을 받을 수 있습니다.</p>
+      <p class="corp-copyright">©SOON Corp.</p>
     </footer>
   </div>
   
