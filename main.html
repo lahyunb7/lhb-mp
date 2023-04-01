@@ -7,26 +7,29 @@
   <link rel="stylesheet" href="main.css">
   <script type="module" src="main.js"></script>
   <script src="https://kit.fontawesome.com/da482cdeb9.js" crossorigin="anonymous"></script>
-  <title>Soon's Library</title>
+  <title>Mango toon</title>
 </head>
 <body>
   <div id="home">
-    <header>
-      <div class="title">
-        <h1><i class="fa-sharp fa-solid fa-mango"></i><span>MANGO</span>TOON</h1>
-      </div>
+    <header class="header">
       <nav class="nav-bar">
         <ul class="catagory">
+          <li class="sub-category">
+            <a class="title" href=""><h1><span>Mango</span> toon</h1></a>
+          </li>
           <li class="sub-category"><a href="src/novel.html">웹소설</a></li>
           <li class="sub-category"><a href="">웹툰</a></li>
-          <li class="sub-category"><a href="">이북</a></li>
-          <li class="sub-category"><a href="">커뮤니티</a></li>
-          <li class="sub-category"><a href="">이벤트</a></li>
+          <li class="sub-category"><a href="">ebook</a></li>
         </ul>
         <div class="search-bar">
-          <input type="search" placeholder="키워드를 검색하세요.">
-          <input type="submit" value="검색">
+          <form action="">
+            <input type="text" maxlength="30" placeholder="제목, 작가를 입력하세요.">
+            <button name="button" type="submit" >
+              <i role="img" aria-label="검색" class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
         </div>
+
       </nav>
     </header>
     <main class="container">
@@ -49,7 +52,7 @@
       </div>
       <!-- 카테고리 컴포넌트 구현 -->
     </main>
-    <footer>
+    <footer class="footer">
       <h2 class="hide-text">회사정보</h2>
       <div class="corp">
         <div class="corp-service">
@@ -77,15 +80,10 @@
         </div>
         <div class="corp-sns">
           <h3>SNS</h3>
-          <!-- <ul class="corp-list corp-sns">
-            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href=""><i class="fa-regular fa-envelope"></i></a></li>
-          </ul> -->
           <div class="sns">
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-brands fa-twitter"></i></a>
-            <a href=""><i class="fa-regular fa-envelope"></i></a>
+            <a href=""><i role="img" aria-label="인스타그램" class="fa-brands fa-instagram"></i></a>
+            <a href=""><i role="img" aria-label="트위터" class="fa-brands fa-twitter"></i></a>
+            <a href=""><i role="img" aria-label="메일" class="fa-regular fa-envelope"></i></a>
           </div>
         </div>
       </div>
