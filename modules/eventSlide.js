@@ -1,5 +1,5 @@
 export const eventSlide = () => {
-  const slideContainer = document.getElementsByClassName("slide-container")[0];
+  const slideContainer = document.getElementsByClassName("event-container")[0];
   let slideItem = document.querySelectorAll(".slide-item");
   let slideTotal = slideItem.length / 2 - 1;
   let slideIndex = 0;

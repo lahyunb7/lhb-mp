@@ -2,25 +2,8 @@ import { appendChildrenList, makeDOMwithProperties } from "../utils/dom.js";
 import { productCard } from "./productCard.js";
 
 export const productList = (bookInfo, sectionInfo) => {
-  {
-    /* <div class="section-list best-seller">
-        <h2 class="section-title">신규or실시간 인기작</h2>
-        <div class="book-component">
-          <ul class="prod-list">
-            <li class="prod-card">
-              <div class="book-poster">
-                <img src="/img/myfirstmemory.jpg" alt="myfirstmemory">
-              </div>
-              <div class="book-info">
-                <h3 class="book-name">My first memory</h3>
-                <div class="price"> 1화 n원 </div>
-                <span>작가명</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div> */
-  }
+  //섹션 생성 - 공통
+  // makeDOMwithProperties() --> 태그 생성 컴포넌트
   const sectionList = makeDOMwithProperties("div", {
     className: sectionInfo.classname,
     className: "section-list",
@@ -33,7 +16,7 @@ export const productList = (bookInfo, sectionInfo) => {
     className: "book-component",
   });
 
-  // 실시간 랭킹 카테고리는 ol, 이외에는 ul
+  // 섹션 생성 - '실시간랭킹' ol, 이외 ul
   let prodList;
   if (sectionInfo.classname === "rank") {
     prodList = makeDOMwithProperties("ol", {
@@ -46,6 +29,7 @@ export const productList = (bookInfo, sectionInfo) => {
     });
   }
 
+  // 자식 요소로 작품 카드 넣기
   bookInfo[sectionInfo.classname].forEach((prodInfo, index) => {
     const prodCard = productCard(prodInfo, sectionInfo.classname, index);
     appendChildrenList(prodList, [prodCard]);
@@ -54,6 +38,5 @@ export const productList = (bookInfo, sectionInfo) => {
   appendChildrenList(sectionList, [sectionTitle, bookComponent]);
   appendChildrenList(bookComponent, [prodList]);
 
-  const container = document.getElementsByClassName("container")[0];
-  appendChildrenList(container, [sectionList]);
+  return sectionList;
 };

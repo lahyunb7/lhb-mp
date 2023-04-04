@@ -1,0 +1,48 @@
+{
+  "slideItem": [
+    {
+      "name": "까마귀는 반짝이는 것을 좋아해",
+      "src": "/img/event/top/까마귀는 반짝이는 것을 좋아해.jpg"
+    },
+    {
+      "name": "늑대지만 해치지 않아요",
+      "src": "/img/event/top/늑대지만 해치지 않아요.jpg"
+    },
+    {
+      "name": "우리 같이 살아요",
+      "src": "/img/event/top/우리 같이 살아요.jpg"
+    },
+    {
+      "name": "호랑이님의 딸이 되었습니다",
+      "src": "/img/event/top/호랑이님의 딸이 되었습니다.jpg"
+    },
+    {
+      "name": "로맨스는 없다",
+      "src": "/img/event/top/로맨스는 없다.jpg"
+    },
+    {
+      "name": "괴물 저택의 도련님을 지키는 방법",
+      "src": "/img/event/top/괴물 저택의 도련님을 지키는 방법.jpg"
+    }
+  ],
+  "eventItem": [
+    {
+      "name": "1",
+      "src": "/img/event/bottom/1.jpg"
+    },
+    {
+      "name": "2",
+      "src": "/img/event/bottom/2.jpg"
+    },
+    {
+      "name": "3",
+      "src": "/img/event/bottom/3.jpg"
+    },
+    {
+      "name": "4",
+      "src": "/img/event/bottom/4.jpg"
+    }
+  ],
+  "type": "module"
+
+}

@@ -1,0 +1,180 @@
+{
+  "only": [
+    {
+      "name": "남주의 여자사람친구가 되었다",
+      "scope": "4.5",
+      "img": "/img/남주의 여자사람친구가 되었다.jpg",
+      "review": "2,585",
+      "author": "햇살수인"
+    },
+    {
+      "name": "내가 만든 AI가 성좌가 되었다",
+      "scope": "4.0",
+      "img": "/img/내가 만든 AI가 성좌가 되었다.jpg",
+      "review": "1,320",
+      "author": "똥맛된장"
+    },
+    {
+      "name": "드래곤을 유괴하다",
+      "scope": "4.0",
+      "img": "/img/드래곤을 유괴하다.jpg",
+      "review": "1,320",
+      "author": "유주"
+    },
+    {
+      "name": "악당은 살고싶다",
+      "scope": "4.0",
+      "img": "/img/악당은 살고싶다.jpg",
+      "review": "1,836",
+      "author": "지갑송"
+    },
+    {
+      "name": "너 나랑 잤니?",
+      "scope": "4.5",
+      "img": "/img/실시간랭킹/너 나랑 잤니.jpg",
+      "review": "998",
+      "author": "뜨귤"
+    }
+  ],
+  "best":[
+    {
+      "name": "소설 속 엑스트라",
+      "scope": "4.5",
+      "img": "/img/소설 속 엑스트라.jpg",
+      "review": "2,585",
+      "author": "지갑송"
+    },
+    {
+      "name": "악당은 살고싶다",
+      "scope": "4.0",
+      "img": "/img/악당은 살고싶다.jpg",
+      "review": "1,836",
+      "author": "지갑송"
+    },
+    {
+      "name": "위대한 소설가",
+      "scope": "4.0",
+      "img": "/img/위대한 소설가.jpg",
+      "review": "1,836",
+      "author": "임한백"
+    },
+    {
+      "name": "동백꽃",
+      "scope": "4.2",
+      "img": "/img/실시간랭킹/동백꽃.jpg",
+      "review": "1,401",
+      "author": "켄"
+    },
+    {
+      "name": "드래곤을 유괴하다",
+      "scope": "4.0",
+      "img": "/img/드래곤을 유괴하다.jpg",
+      "review": "1,320",
+      "author": "유주"
+    }
+  ],
+  "free":[
+    {
+      "name": "위태로운 동거",
+      "scope": "4.5",
+      "img": "/img/위태로운 동거.jpg",
+      "review": "2,585",
+      "author": "셔틀"
+    },
+    {
+      "name": "페인킬러 (PainKillers)",
+      "scope": "4.0",
+      "img": "/img/페인킬러(PainKillers).jpg",
+      "review": "1,836",
+      "author": "미지은"
+    },
+    {
+      "name": "대척점",
+      "scope": "4.0",
+      "img": "/img/대척점.jpg",
+      "review": "1,320",
+      "author": "임은성"
+    },
+    {
+      "name": "우리는 피터팬을 부른다",
+      "scope": "4.0",
+      "img": "/img/실시간랭킹/우리는 피터팬을 부른다.jpg",
+      "review": "842",
+      "author": "최하진"
+    },
+    {
+      "name": "나를 사랑하지 않은 죄",
+      "scope": "3.9",
+      "img": "/img/실시간랭킹/나를 사랑하지 않은 죄.jpg",
+      "review": "975",
+      "author": "홍세라"
+    }
+  ],
+  "rank":[
+    {
+      "name": "공작의 연인에게 죽음을",
+      "scope": "4.1",
+      "img": "/img/실시간랭킹/공작의 연인에게 죽음을.jpg",
+      "review": "1,508",
+      "author": "서도연"
+    },
+    {
+      "name": "동백꽃",
+      "scope": "4.2",
+      "img": "/img/실시간랭킹/동백꽃.jpg",
+      "review": "1,401",
+      "author": "켄"
+    },
+    {
+      "name": "쓰레기를 치웠더니 흑막이 꼬여버렸다",
+      "scope": "4.8",
+      "img": "/img/실시간랭킹/쓰레기를 치웠더니 흑막이 꼬여버렸다.jpg",
+      "review": "2,010",
+      "author": "캐로티"
+    },
+    {
+      "name": "나를 사랑하지 않은 죄",
+      "scope": "3.9",
+      "img": "/img/실시간랭킹/나를 사랑하지 않은 죄.jpg",
+      "review": "975",
+      "author": "홍세라"
+    },
+    {
+      "name": "인소에 갇혀버렸다?!",
+      "scope": "4.0",
+      "img": "/img/실시간랭킹/인소에 갇혀버렸다.jpg",
+      "review": "662",
+      "author": "곰베리"
+    },
+    {
+      "name": "대척점",
+      "scope": "4.0",
+      "img": "/img/대척점.jpg",
+      "review": "1,320",
+      "author": "임은성"
+    },
+    {
+      "name": "너 나랑 잤니?",
+      "scope": "4.5",
+      "img": "/img/실시간랭킹/너 나랑 잤니.jpg",
+      "review": "998",
+      "author": "뜨귤"
+    },
+    {
+      "name": "페인킬러 (PainKillers)",
+      "scope": "4.0",
+      "img": "/img/페인킬러(PainKillers).jpg",
+      "review": "543",
+      "author": "미지은"
+    },
+    {
+      "name": "우리는 피터팬을 부른다",
+      "scope": "4.0",
+      "img": "/img/실시간랭킹/우리는 피터팬을 부른다.jpg",
+      "review": "842",
+      "author": "최하진"
+    }
+  ],
+  "type": "module"
+
+}
