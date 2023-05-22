@@ -1,7 +1,7 @@
 export const eventSlide = () => {
-  const slideContainer = document.querySelectorAll<HTMLElement>("event-container")[0];  // getElementsByClassName는 style 속성을 포함하지 않고 반환하기 때문에 querySelector 사용.
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
+  const slideContainer = document.querySelectorAll<HTMLElement>(".event-container")[0];  // getElementsByClassName는 style 속성을 포함하지 않고 반환하기 때문에 querySelector 사용.
+  const prevBtn = document.querySelectorAll(".prev")[0];
+  const nextBtn = document.querySelectorAll(".next")[0];
   let slideTotal:number = document.querySelectorAll(".slide-item").length / 2 - 1;
   let slideIndex:number = 0;
 
@@ -12,6 +12,7 @@ export const eventSlide = () => {
     } else {
       slideIndex += 1;
       slideContainer.style.transform = `translateX(${slideIndex * -1200}px)`;
+
     }
   }
 
