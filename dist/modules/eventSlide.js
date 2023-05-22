@@ -1,7 +1,7 @@
 export var eventSlide = function () {
-    var slideContainer = document.querySelectorAll("event-container")[0]; // getElementsByClassName는 style 속성을 포함하지 않고 반환하기 때문에 querySelector 사용.
-    var prevBtn = document.querySelector(".prev");
-    var nextBtn = document.querySelector(".next");
+    var slideContainer = document.querySelectorAll(".event-container")[0]; // getElementsByClassName는 style 속성을 포함하지 않고 반환하기 때문에 querySelector 사용.
+    var prevBtn = document.querySelectorAll(".prev")[0];
+    var nextBtn = document.querySelectorAll(".next")[0];
     var slideTotal = document.querySelectorAll(".slide-item").length / 2 - 1;
     var slideIndex = 0;
     function nextSlide() {
