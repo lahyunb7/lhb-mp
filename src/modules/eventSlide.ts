@@ -1,13 +1,12 @@
 export const eventSlide = () => {
-  const slideContainer = document.getElementsByClassName("event-container")[0];
-  let slideItem = document.querySelectorAll(".slide-item");
-  let slideTotal = slideItem.length / 2 - 1;
-  let slideIndex = 0;
-  const prevBtn = document.querySelectorAll(".prev")[0];
-  const nextBtn = document.querySelectorAll(".next")[0];
+  const slideContainer = document.querySelectorAll<HTMLElement>("event-container")[0];  // getElementsByClassName는 style 속성을 포함하지 않고 반환하기 때문에 querySelector 사용.
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  let slideTotal:number = document.querySelectorAll(".slide-item").length / 2 - 1;
+  let slideIndex:number = 0;
 
   function nextSlide() {
-    if (slideIndex == slideTotal) {
+    if (slideIndex === slideTotal) {
       slideContainer.style.transform = `translateX(${0}px)`;
       slideIndex = 0;
     } else {
@@ -31,7 +30,7 @@ export const eventSlide = () => {
 
   // 마우스 오버 시 멈춤
   const mouse = [slideContainer, prevBtn, nextBtn];
-  mouse.forEach((e) => {
+  mouse.forEach((e:Element) => {
     e.addEventListener("mouseleave", () => {
       interval = setInterval(nextSlide, 2000);
     });
@@ -41,10 +40,10 @@ export const eventSlide = () => {
   });
 
   // 버튼 클릭 시 이전 이후 이동
-  nextBtn.addEventListener("click", () => {
-    nextSlide();
-  });
-  prevBtn.addEventListener("click", () => {
-    prevSlide();
-  });
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+    });
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+    });
 };

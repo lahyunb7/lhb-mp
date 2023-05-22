@@ -1,27 +1,27 @@
 import { appendChildrenList, makeDOMwithProperties } from "../utils/dom.js";
 import { productCard } from "./productCard.js";
 
-export const productList = (bookInfo, sectionInfo) => {
+export const productList = (bookInfo:[], sectionInfo: { classname: string; title: string; }) => {
   //섹션 생성 - 공통
   // makeDOMwithProperties() --> 태그 생성 컴포넌트
+  const {classname, title} = sectionInfo;
+
   const sectionList = makeDOMwithProperties("div", {
-    className: sectionInfo.classname,
-    className: "section-list",
+    className: `${classname} section-list`,
   });
   const sectionTitle = makeDOMwithProperties("h2", {
     className: "section-title",
-    innerText: sectionInfo.title,
+    innerText: title,
   });
   const bookComponent = makeDOMwithProperties("div", {
     className: "book-component",
   });
 
   // 섹션 생성 - '실시간랭킹' ol, 이외 ul
-  let prodList;
-  if (sectionInfo.classname === "rank") {
+  let prodList:HTMLElement;
+  if (classname === "rank") {
     prodList = makeDOMwithProperties("ol", {
-      className: "prod-list",
-      className: "ranking",
+      className: "prod-list ranking",
     });
   } else {
     prodList = makeDOMwithProperties("ul", {
@@ -30,8 +30,8 @@ export const productList = (bookInfo, sectionInfo) => {
   }
 
   // 자식 요소로 작품 카드 넣기
-  bookInfo[sectionInfo.classname].forEach((prodInfo, index) => {
-    const prodCard = productCard(prodInfo, sectionInfo.classname, index);
+  bookInfo.forEach((prodInfo, index) => {
+    const prodCard = productCard(prodInfo, classname, index);
     appendChildrenList(prodList, [prodCard]);
   });
 

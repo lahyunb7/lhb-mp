@@ -1,6 +1,7 @@
-import { appendChildrenList, makeDOMwithProperties } from "../utils/dom.js";
+import { appendChildrenList, makeDOMwithProperties, Data } from "../utils/dom.js";
 
-export const productCard = (info, sectionTitle, index) => {
+
+export const productCard = (info:Data, sectionTitle:string, index:number) => {
   const bookPoster = makeDOMwithProperties("div", {
     className: "book-poster",
   });
