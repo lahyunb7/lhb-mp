@@ -1,10 +1,10 @@
 import { appendChildrenList, makeDOMwithProperties } from "../utils/dom.js";
 import { productCard } from "./productCard.js";
 
-export const productList = (bookInfo:[], sectionInfo: { classname: string; title: string; }) => {
+export const productList = (bookInfo, sectionInfo) => {
   //섹션 생성 - 공통
   // makeDOMwithProperties() --> 태그 생성 컴포넌트
-  const {classname, title} = sectionInfo;
+  const { classname, title } = sectionInfo;
 
   const sectionList = makeDOMwithProperties("div", {
     className: `${classname} section-list`,
@@ -18,7 +18,7 @@ export const productList = (bookInfo:[], sectionInfo: { classname: string; title
   });
 
   // 섹션 생성 - '실시간랭킹' ol, 이외 ul
-  let prodList:HTMLElement;
+  let prodList;
   if (classname === "rank") {
     prodList = makeDOMwithProperties("ol", {
       className: "prod-list ranking",

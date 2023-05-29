@@ -1,6 +1,6 @@
-import { appendChildrenList, makeDOMwithProperties, EventData } from "../utils/dom.js";
+import { appendChildrenList, makeDOMwithProperties } from "../utils/dom.js";
 
-export const eventSection = (bannerInfo:[], item:string) => {
+export const eventSection = (bannerInfo, item) => {
   const event = makeDOMwithProperties("div", {
     className: "event",
   });
@@ -10,7 +10,7 @@ export const eventSection = (bannerInfo:[], item:string) => {
   const eventContainer = makeDOMwithProperties("div", {
     className: "event-container",
   });
-  bannerInfo.forEach((e:EventData) => {
+  bannerInfo.forEach((e) => {
     const eventImg = makeDOMwithProperties("img", {
       className: item,
       src: e.src,
