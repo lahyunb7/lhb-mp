@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <script src="aws-sdk.min.js"></script>
+  <script src="aws-cognito-sdk.min.js"></script>
+  <script src="amazon-cognito-identity.min.js"></script>
+  <script src="main.js"></script>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<style>
+
+
+    .container {
+      width: 500px;
+      height: 270px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .container input[type="text"],
+    .container input[type="password"],
+    .container input[type="button"],
+    .container button {
+      width: calc(100% - 20px);
+      margin-bottom: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .container input[type="button"],
+    .container button {
+      background-color: #FFD300; /* 버튼의 배경색을 FFD300으로 지정합니다. */
+      color: #000; /* 버튼 텍스트의 색상을 지정합니다. */
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <p class="fsize">Confirm</p>  
+    <input type="text" id="email" placeholder="email">
+    <input type="text" id="ConfirmCode" placeholder="verification code">
+    <input type="button" value="Confirm" onclick="ConfirmRegistration();">
+  </div>
+</body>
+</html>

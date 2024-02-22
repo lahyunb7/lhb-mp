@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Keywords" content="mango, 망고툰" />
+  <meta name="Robots" content="noindex, nofollow" />
+  <meta http-equiv="Author" content="박희순" />
+  <link rel="icon" href="mango.ico">
+  <link rel="stylesheet" href="/src/main.css">
+  <script type="module" src="/src/main.js"></script>
+  <script src="https://kit.fontawesome.com/da482cdeb9.js" crossorigin="anonymous"></script>
+  <title>Mango toon</title>
+
+
+</head>
+<body>
+
+  <div id="home">
+    <header class="header">
+      <nav class="nav-bar">
+        <ul class="catagory">
+          <li class="sub-category">
+            <a class="title" href="/index.html"><h1><span>Mango</span> toon</h1></a>
+          </li>
+          <li class="sub-category"><a href="/scripts/novel.html">웹소설</a></li>
+          <li class="sub-category"><a href="/scripts/extra.html">웹툰</a></li>
+          <li class="sub-category"><a href="/ebook-project/index.html">ebook</a></li>
+        </ul>
+        <div class="search-bar">
+          <form action="">
+            <input type="text" maxlength="30" placeholder="제목, 작가를 입력하세요.">
+            <button name="button" type="submit" >
+              <i role="img" aria-label="검색" class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <div class="user">
+          <a href=""><i role="img" aria-label="선물함" class="fa-solid fa-gift"></i></a>
+          <a href=""><i role="img" aria-label="장바구니" class="fa-solid fa-bag-shopping"></i></a>  
+          <a href="/scripts/login/login.html"><i role="img" aria-label="내 정보" class="fa-solid fa-user"></i></a>
+        </div>
+      </nav>
+    <style>
+        /* 이미지 간격 조절 */
+        #image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px; /* 가로 간격 설정 */
+        }
+        #image-container a {
+            width: calc(25% - 50px); /* 각 이미지의 너비 설정 */
+            margin-bottom: 50px; /* 세로 간격 설정 */
+            display: block;
+        }
+    </style>
+    </header>
+    <main class="container">
+      <!-- 슬라이드 이벤트
+      이달의 베스트
+      실시간 랭킹
+      MANGO 독점공개
+      오늘만 무료
+      커스텀 이벤트 -->
+      <main class="container">
+          <div id="image-container">
+              <a href="https://page.kakao.com/content/46288050">
+                <img id="myImage1" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/darksmell.jpg" alt="S3 Image1" width="100%" height="auto">
+              </a>
+              <a href="https://page.kakao.com/content/62951254">
+                  <img id="myImage2" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/level.jpg" alt="S3 Image2" width="100%" height="auto">
+              </a>
+              <a href="https://page.kakao.com/content/62831445">
+                  <img id="myImage3" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/muscle.jpg" alt="S3 Image3" width="100%" height="auto">
+              </a>
+              <a href="https://page.kakao.com/content/55826557">
+                  <img id="myImage4" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/my.jpg" alt="S3 Image4" width="100%" height="auto">
+              </a>
+              <a href="https://page.kakao.com/content/54189843">
+                  <img id="myImage5" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/north.jpg" alt="S3 Image5" width="100%" height="auto">
+              </a>
+              <a href="https://page.kakao.com/content/50866481">
+                  <img id="myImage6" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/only.jpg" alt="S3 Image6" width="100%" height="auto">
+              </a>
+              <a href="https://page.kakao.com/content/52822434">
+                  <img id="myImage7" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/sss.jpg" alt="S3 Image7" width="100%" height="auto">
+              </a>
+              <a href="https://page.kakao.com/content/54015654">
+                  <img id="myImage8" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/thunder.jpg" alt="S3 Image8" width="100%" height="auto">
+              </a>
+          </div>
+      </main>
+
+
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1071.0.min.js"></script>
+  <script>
+    // window.onload 이벤트를 사용하여 페이지 로드 후 코드를 실행합니다.
+    window.onload = function() {
+      // AWS SDK 설정
+       AWS.config.update({
+        accessKeyId: '',
+        secretAccessKey: '',
+         region: 'ap-northeast-2'
+       });
+
+      // // AWS 전역 변수로 설정
+       window.AWS = AWS;
+
+      // // S3 객체 생성
+       var s3 = new AWS.S3();
+    
+     // 사전 서명된 URL 생성 함수
+    function getSignedUrl(key) {
+        const params = {
+            Bucket: 'lhb-kops',
+            Key: key, // 각 이미지의 키(Key)
+            Expires: 3600 // URL 만료 시간 (초)
+        };
+    
+        return new Promise((resolve, reject) => {
+            s3.getSignedUrl('getObject', params, (err, url) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(url);
+                }
+            });
+        });
+    }
+    
+    // 이미지 표시 함수
+    async function displayImages() {
+        try {
+            // 각 이미지에 대한 서명된 URL을 생성하고 이미지 태그에 할당
+            const keys = [
+                'darksmell.jpg',
+                'level.jpg',
+                'muscle.jpg',
+                'my.jpg',
+                'north.jpg',
+                'only.jpg',
+                'sss.jpg',
+                'thunder.jpg'
+            ];
+    
+            for (let i = 0; i < keys.length; i++) {
+                const key = 'img/' + keys[i]; // 이미지 경로 추가
+                const imageUrl = await getSignedUrl(key);
+                const imageElement = document.getElementById('myImage' + (i + 1));
+                imageElement.src = imageUrl;
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+    
+    // 페이지 로드 시 이미지 표시
+    displayImages();
+
+
+  };
+  </script>
+    <footer class="footer">
+      <h2 class="hide-text">회사정보</h2>
+      <div class="corp">
+        <div class="corp-service">
+          <h3>서비스</h3>
+          <ul class="corp-list">
+            <li>서비스 가이드</li>
+            <li>제휴카드</li>
+            <li>콘텐츠 제공 문의</li>
+            <li>사업 제휴 문의</li>
+            <li>회사 소개</li>
+            <li>인재채용</li>
+          </ul>
+        </div>
+        <div class="corp-info">
+          <h3>(주)순책방</h3>
+          <div>
+            <ul class="corp-list">
+              <li>이용약관</li>
+              <li>개인정보처리방침</li>
+              <li>청소년보호정책</li>
+              <li>웹툰 고객센터</li>
+              <li>광고/사업문의</li>
+            </ul>
+          </div>
+        </div>
+        <div class="corp-sns">
+          <h3>SNS</h3>
+          <div class="sns">
+            <a href=""><i role="img" aria-label="인스타그램" class="fa-brands fa-instagram"></i></a>
+            <a href=""><i role="img" aria-label="트위터" class="fa-brands fa-twitter"></i></a>
+            <a href=""><i role="img" aria-label="메일" class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="corp-copyright">본 사이트에 등록된 콘텐츠는 사이트 및 원 저작권자에 권리가 있는 콘텐츠이며, 무단 복제/전송/수정/배포는 법적 처벌을 받을 수 있습니다.</p>
+      <p class="corp-copyright">©SOON Corp.</p>
+    </footer>
+  </div>
+  
+</body>
+</html>
