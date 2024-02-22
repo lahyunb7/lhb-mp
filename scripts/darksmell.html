@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Keywords" content="mango, 망고툰" />
+  <meta name="Robots" content="noindex, nofollow" />
+  <meta http-equiv="Author" content="박희순" />
+  <link rel="icon" href="mango.ico">
+  <link rel="stylesheet" href="/src/main.css">
+  <script type="module" src="/src/main.js"></script>
+  <script src="https://kit.fontawesome.com/da482cdeb9.js" crossorigin="anonymous"></script>
+  <title>Mango toon</title>
+
+
+</head>
+<body>
+
+  <div id="home">
+    <header class="header">
+      <nav class="nav-bar">
+        <ul class="catagory">
+          <li class="sub-category">
+            <a class="title" href="/index.html"><h1><span>Mango</span> toon</h1></a>
+          </li>
+          <li class="sub-category"><a href="/scripts/novel.html">웹소설</a></li>
+          <li class="sub-category"><a href="/scripts/extra.html">웹툰</a></li>
+          <li class="sub-category"><a href="/ebook-project/index.html">ebook</a></li>
+        </ul>
+        <div class="search-bar">
+          <form action="">
+            <input type="text" maxlength="30" placeholder="제목, 작가를 입력하세요.">
+            <button name="button" type="submit" >
+              <i role="img" aria-label="검색" class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <div class="user">
+          <a href=""><i role="img" aria-label="선물함" class="fa-solid fa-gift"></i></a>
+          <a href=""><i role="img" aria-label="장바구니" class="fa-solid fa-bag-shopping"></i></a>  
+          <a href="/scripts/login/login.html"><i role="img" aria-label="내 정보" class="fa-solid fa-user"></i></a>
+        </div>
+      </nav>
+  <style>
+    #image-container {
+      text-align: center; /* 이미지 가운데 정렬 */
+    }
+    #image-container img {
+      width: 80%; /* 이미지 폭을 화면의 80%로 설정 */
+      height: auto; /* 이미지 높이를 자동으로 조정 */
+      display: block; /* 이미지를 블록 요소로 설정하여 가운데 정렬 */
+      margin: 20px auto; /* 가운데 정렬 및 위아래 20px 마진 추가 */
+    }
+  </style>
+      </head>
+<body>
+
+<main>
+    <a>
+      <img id="myImage1" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/1.1.jpg" alt="S3 Image1">
+    </a>
+</main>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1071.0.min.js"></script>
+<script>
+  // window.onload 이벤트를 사용하여 페이지 로드 후 코드를 실행합니다.
+  window.onload = function() {
+    // AWS SDK 설정
+    AWS.config.update({
+      accessKeyId: '',
+      secretAccessKey: '',
+      region: 'ap-northeast-2'
+    });
+
+    // S3 객체 생성
+    var s3 = new AWS.S3();
+
+    // 이미지 표시 함수
+    function displayImages() {
+      // 이미지 표시할 img 요소
+      var imgElement = document.getElementById('myImage1');
+
+      // Pre-signed URL 생성
+      var key = '1.1.jpg'; // 이미지의 Key 값
+      getSignedUrl(key)
+        .then(function(url) {
+          // Pre-signed URL을 이미지의 src 속성에 설정하여 이미지 표시
+          imgElement.src = url;
+        })
+        .catch(function(err) {
+          console.error('Pre-signed URL 생성 실패:', err);
+        });
+    }
+
+    // 사전 서명된 URL 생성 함수
+    function getSignedUrl(key) {
+      var params = {
+        Bucket: 'lhb-kops',
+        Key: key, // 이미지의 키(Key)
+        Expires: 3600 // URL 만료 시간 (초)
+      };
+
+      return new Promise(function(resolve, reject) {
+        s3.getSignedUrl('getObject', params, function(err, url) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(url);
+          }
+        });
+      });
+    }
+
+    // 페이지 로드 시 이미지 표시
+    displayImages();
+  };
+</script>
+
+  
+</body>
+</html>

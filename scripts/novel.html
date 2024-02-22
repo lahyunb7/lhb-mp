@@ -42,54 +42,105 @@
           <a href="/scripts/login/login.html"><i role="img" aria-label="내 정보" class="fa-solid fa-user"></i></a>
         </div>
       </nav>
-    <style>
-        /* 이미지 간격 조절 */
-        #image-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px; /* 가로 간격 설정 */
-        }
-        #image-container a {
-            width: calc(25% - 50px); /* 각 이미지의 너비 설정 */
-            margin-bottom: 50px; /* 세로 간격 설정 */
-            display: block;
-        }
-    </style>
-    </header>
-    <main class="container">
-      <!-- 슬라이드 이벤트
-      이달의 베스트
-      실시간 랭킹
-      MANGO 독점공개
-      오늘만 무료
-      커스텀 이벤트 -->
+<style>
+  /* 이미지 간격 조절 */
+  #image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px; /* 가로 간격 설정 */
+  }
+  #image-container a {
+    width: calc(25% - 50px); /* 각 이미지의 너비 설정 */
+    margin-bottom: 50px; /* 세로 간격 설정 */
+    display: block;
+    position: relative; /* 상대 위치 설정 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+  }
+  .image-info {
+    font-size: 14px;
+    position: absolute; /* 절대 위치 설정 */
+    bottom: 10px; /* 하단 간격 설정 */
+    left: 10px; /* 좌측 간격 설정 */
+    background-color: rgba(255, 255, 255, 0.7); /* 배경색과 투명도 설정 */
+    padding: 5px; /* 안쪽 여백 설정 */
+    width: calc(100% - 20px); /* 너비를 부모 요소에 맞추기 */
+  }
+  .image-info span {
+    display: block; /* 블록 레벨 요소로 변경 */
+    margin-bottom: 3px; /* 요소 간격 설정 */
+  }
+  .image-info .title {
+    font-size: 16px; /* 작품 이름 폰트 크기 설정 */
+    color: black; /* 작품 이름 폰트 색상 설정 */
+    font-weight: normal; /* 작품 이름 폰트 굵게 설정 */
+  }
+  .image-info .author {
+    font-size: 8px; /* 작가 이름 폰트 크기 설정 */
+    color: black; /* 작가 이름 폰트 색상 설정 */
+  }
+</style>
+      </head>
+      <body>
+      
       <main class="container">
-          <div id="image-container">
-              <a href="https://page.kakao.com/content/46288050">
-                <img id="myImage1" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/darksmell.jpg" alt="S3 Image1" width="100%" height="auto">
-              </a>
-              <a href="https://page.kakao.com/content/62951254">
-                  <img id="myImage2" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/level.jpg" alt="S3 Image2" width="100%" height="auto">
-              </a>
-              <a href="https://page.kakao.com/content/62831445">
-                  <img id="myImage3" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/muscle.jpg" alt="S3 Image3" width="100%" height="auto">
-              </a>
-              <a href="https://page.kakao.com/content/55826557">
-                  <img id="myImage4" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/my.jpg" alt="S3 Image4" width="100%" height="auto">
-              </a>
-              <a href="https://page.kakao.com/content/54189843">
-                  <img id="myImage5" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/north.jpg" alt="S3 Image5" width="100%" height="auto">
-              </a>
-              <a href="https://page.kakao.com/content/50866481">
-                  <img id="myImage6" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/only.jpg" alt="S3 Image6" width="100%" height="auto">
-              </a>
-              <a href="https://page.kakao.com/content/52822434">
-                  <img id="myImage7" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/sss.jpg" alt="S3 Image7" width="100%" height="auto">
-              </a>
-              <a href="https://page.kakao.com/content/54015654">
-                  <img id="myImage8" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/thunder.jpg" alt="S3 Image8" width="100%" height="auto">
-              </a>
-          </div>
+        <div id="image-container">
+          <a href="/scripts/darksmell.html">
+            <img id="myImage1" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/darksmell.jpg" alt="S3 Image1" width="100%" height="80%">
+            <div class="image-info">
+              <span>묵향</span><br>
+              <span>글: 전동조</span>
+            </div>
+          </a>
+          <a href="https://page.kakao.com/content/56807841">
+            <img id="myImage2" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/live.jpg" alt="S3 Image2" width="100%" height="80%">
+            <div class="image-info">
+              <span>악당은 살고 싶다</span><br>
+              <span>글: 지갑송</span>
+            </div>
+          </a>
+          <a href="https://page.kakao.com/content/62831445">
+            <img id="myImage3" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/muscle.jpg" alt="S3 Image3" width="100%" height="80%">
+            <div class="image-info">
+              <span>근육조선</span><br>
+              <span>글: 차돌박E</span>
+            </div>
+          </a>
+          <a href="https://page.kakao.com/content/55826557">
+            <img id="myImage4" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/my.jpg" alt="S3 Image4" width="100%" height="80%">
+            <div class="image-info">
+              <span>나의 악당들</span><br>
+              <span>글: 파랑손</span>
+            </div>
+          </a>
+          <a href="https://page.kakao.com/content/54189843">
+            <img id="myImage5" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/north.jpg" alt="S3 Image5" width="100%" height="80%">
+            <div class="image-info">
+              <span>북검전기</span><br>
+              <span>글: 우각</span>
+            </div>
+          </a>
+          <a href="https://page.kakao.com/content/50866481">
+            <img id="myImage6" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/only.jpg" alt="S3 Image6" width="100%" height="80%">
+            <div class="image-info">
+              <span>나 혼자만 레벨업</span><br>
+              <span>글: 추공</span>
+            </div>
+          </a>
+          <a href="https://page.kakao.com/content/52822434">
+            <img id="myImage7" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/sss.jpg" alt="S3 Image7" width="100%" height="80%">
+            <div class="image-info">
+              <span>SSS급 죽어야 사는 헌터</span><br>
+              <span>글: 신노아</span>
+            </div>
+          </a>
+          <a href="https://page.kakao.com/content/54015654">
+            <img id="myImage8" src="https://lhb-kops.s3.ap-northeast-2.amazonaws.com/img/thunder.jpg" alt="S3 Image8" width="100%" height="80%">
+            <div class="image-info">
+              <span>비뢰도</span><br>
+              <span>글: 검류혼</span>
+            </div>
+          </a>
+        </div>
       </main>
 
 
