@@ -11,8 +11,6 @@
 </head>
 
 <style>
-
-
     .container {
       width: 500px;
       height: 270px;
@@ -42,9 +40,8 @@
       color: #000; /* 버튼 텍스트의 색상을 지정합니다. */
       cursor: pointer;
     }
-  </style>
+</style>
 </head>
-
 
 <body>
   <div class="container">
@@ -54,4 +51,56 @@
     <input type="button" value="Login" onclick="Login();">
     <button onclick="window.location.href='/scripts/login/signup.html'">회원가입</button>
   </div>
+
+<script>
+    // AWS Cognito 로그인 로직
+function Login() {
+    const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+    var username = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    var authenticationData = {
+        Username: username,
+        Password: password,
+    };
+
+    var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(
+        authenticationData
+    );
+    var userData = {
+        Username: username,
+        Pool: userPool,
+    };
+
+    var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+
+    cognitoUser.authenticateUser(authenticationDetails, {
+        onSuccess: function (result) {
+            var idToken = result.getIdToken().getJwtToken();          // ID 토큰
+            var accessToken = result.getAccessToken().getJwtToken();  // 액세스 토큰
+            var refreshToken = result.getRefreshToken().getToken();   // 갱신 토큰
+
+            console.log("idToken : " + idToken);
+            console.log("accessToken : " + accessToken);
+            console.log("refreshToken : " + refreshToken);
+
+            // 사용자 정보를 로컬 스토리지에 저장
+            localStorage.setItem('accessToken', accessToken);
+            localStorage.setItem('refreshToken', refreshToken);
+            alert('로그인에 성공하였습니다.');
+            window.location.href = '/scripts/main.html';
+        },
+
+        onFailure: function(err) {
+            // 로그인에 실패 했을 경우 에러 메시지 표시
+            console.log(err);
+            alert("로그인 실패")
+        }
+    });
+}
+
+    // 로그인 버튼 클릭 시 로그인 함수 호출
+    document.getElementById('loginButton').addEventListener('click', login);
+  </script>
 </body>
+</html>

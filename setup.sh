@@ -14,4 +14,4 @@ npm install --save-dev html-webpack-plugin
 npm install -g http-server
 npm install webpack webpack-cli --save-dev
 npm run build
-http-server
+sudo http-server -p 80

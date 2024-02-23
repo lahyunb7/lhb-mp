@@ -86,44 +86,49 @@ function Login() {
 
 // main.html
 function main() {
-    // cognitoUser에 현재 유저 정보를 받아옴
-    const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-    const cognitoUser = userPool.getCurrentUser(); 
+    // 로그인 정보 가져오기
+    const accessToken = localStorage.getItem('accessToken');
+    const refreshToken = localStorage.getItem('refreshToken');
 
-
-    const currentUserData = {};
-
-    // 현재 cognitoUser가 null이 아니라면 세션 정보를 받아옴 (세션 정보가 없다면 로그인 페이지로 이동)
-  if (cognitoUser != null) {
-    cognitoUser.getSession((err, session) => {
-      if (err) {
-        console.log(err);
+    // 로그인 정보가 있는지 확인하고 없으면 로그인 페이지로 이동
+    if (!accessToken || !refreshToken) {
         location.href = "login.html";
-      } else {
-        // 세션 정보가 유효하다면, cognitoUser에서 유저 속성을 확인(유저 속성이 없다면 로그인 페이지로 이동)
-        cognitoUser.getUserAttributes((err, result) => {
-          if (err) {
-            location.href = "login.html";
-          }
+        return;
+    }
 
-          // 취득한 정보를 화면에 출력
-          for (i = 0; i < result.length; i++) {
-            currentUserData[result[i].getName()] = result[i].getValue();
-          }
+    // Cognito 사용자 세션 유지
+    const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+    const cognitoUser = userPool.getCurrentUser();
 
-          document.getElementById("email").value = currentUserData["email"];
+    if (cognitoUser != null) {
+        cognitoUser.getSession((err, session) => {
+            if (err) {
+                console.log(err);
+                location.href = "login.html";
+            } else {
+                // 세션 정보가 유효하다면, 사용자 정보를 가져옴
+                cognitoUser.getUserAttributes((err, result) => {
+                    if (err) {
+                        location.href = "login.html";
+                    }
 
-          // 로그아웃
-          const signoutButton = document.getElementById("signout");
-          signoutButton.addEventListener("click", event => {
-            cognitoUser.signOut();
-            location.reload();
-          });
-          signoutButton.hidden = false;
+                    // 사용자 정보를 화면에 출력하거나 필요한 작업을 수행할 수 있음
+                    console.log(result);
+                });
+            }
         });
-      }
+    } else {
+        location.href = "login.html";
+    }
+
+    // 로그아웃 버튼 이벤트 처리
+    const signoutButton = document.getElementById("signout");
+    signoutButton.addEventListener("click", event => {
+        cognitoUser.signOut();
+        // 로컬 스토리지에서 로그인 정보 삭제
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        location.reload();
     });
-  } else {
-    location.href = "login.html";
-  }
+    signoutButton.hidden = false;
 }
